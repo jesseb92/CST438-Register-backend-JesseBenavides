@@ -12,7 +12,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int student_id;
 	private String name;
-	private String email;
+	public String email;
 	private int statusCode;
 	private String status;
 	
@@ -55,5 +55,6 @@ public class Student {
 		return "Student [student_id=" + student_id + ", name=" + name + ", email=" + email + ", statusCode="
 				+ statusCode + ", status=" + status + "]";
 	}
+
 
 }
