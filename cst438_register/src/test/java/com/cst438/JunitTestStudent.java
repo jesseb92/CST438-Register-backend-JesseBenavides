@@ -71,7 +71,6 @@ public class JunitTestStudent {
 		student.setEmail(TEST_STUDENT_EMAIL);
 		student.setName(TEST_STUDENT_NAME);
 		
-		
 		// given  -- stubs for database repositories that return test data
 		given(studentRepository.save(any(Student.class))).willReturn(student);
 		

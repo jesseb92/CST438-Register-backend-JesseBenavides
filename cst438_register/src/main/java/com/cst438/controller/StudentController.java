@@ -97,6 +97,7 @@ public class StudentController {
 		Student newStudent = studentRepository.findByEmail(release.email);
 		
 		
+		
 		if(newStudent != null ) {
 			//If there is then we will release the student.
 			newStudent.setStatusCode(0);
