@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -70,11 +71,11 @@ public class StudentController {
 		return studentDTO;
 	}
 
-	@PostMapping("/student/statusCode/{email}")
+	@PutMapping("/student/statusCode/{email}")
 	@Transactional
-	public void holdStudent(@RequestBody StudentDTO hold) {
+	public void holdStudent(@PathVariable String email) {
 		//Checking to see if their is a student with that email already.
-		Student newStudent = studentRepository.findByEmail(hold.email);
+		Student newStudent = studentRepository.findByEmail(email);
 		
 		
 		if(newStudent != null ) {
@@ -90,11 +91,11 @@ public class StudentController {
 	}
 	
 	
-	@PostMapping("/student/release/{email}")
+	@PutMapping("/student/release/{email}")
 	@Transactional
-	public void releaseStudent(@RequestBody StudentDTO release) {
+	public void releaseStudent(@PathVariable String email) {
 		//Checking to see if their is a student with that email already.
-		Student newStudent = studentRepository.findByEmail(release.email);
+		Student newStudent = studentRepository.findByEmail(email);
 		
 		
 		

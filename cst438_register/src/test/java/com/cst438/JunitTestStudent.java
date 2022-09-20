@@ -130,7 +130,7 @@ public class JunitTestStudent {
 		// then do an http post request with body of courseDTO as JSON
 		response = mvc.perform(
 				MockMvcRequestBuilders
-			      .post("/student/statusCode/JesseTest@csumb.edu")
+			      .put("/student/statusCode/JesseTest@csumb.edu")
 			      .content(asJsonString(studentDTO))
 			      .contentType(MediaType.APPLICATION_JSON)
 			      .accept(MediaType.APPLICATION_JSON))
@@ -169,7 +169,7 @@ public class JunitTestStudent {
 		// then do an http post request with body of courseDTO as JSON
 		response = mvc.perform(
 				MockMvcRequestBuilders
-			      .post("/student/release/JesseTest@csumb.edu")
+			      .put("/student/release/JesseTest@csumb.edu")
 			      .content(asJsonString(studentDTO))
 			      .contentType(MediaType.APPLICATION_JSON)
 			      .accept(MediaType.APPLICATION_JSON))
